@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/ggaggao" />
+		<property name="username" value="ggaggao" />
+		<property name="password" value="ggaggao" />
+	</bean>
+
+	<bean id="defaultLobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" />
+
+	<!-- Hibernate SessionFactory? -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="lobHandler" ref="defaultLobHandler" />
+		<property name="packagesToScan" value="net.changwoo.myapp.entity" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+	
+
+	<bean id="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<!-- enable the configuration of transactional behavior based on annotations -->
+	<tx:annotation-driven />
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+
+
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="xml" value="application/xml" />
+				<entry key="json" value="application/json" />
+				<entry key="htm" value="text/html" />
+			</map>
+		</property>
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<bean
+					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="prefix" value="/WEB-INF/views/" />
+					<property name="suffix" value=".jsp" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="0" />
+	</bean>
+	<bean id="jsonView" class="net.sf.json.spring.web.servlet.view.JsonView" />
+
+</beans>
