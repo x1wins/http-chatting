@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC00D93816253AC200415EB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93716253AC200415EB7 /* UIKit.framework */; };
+		DC00D93A16253AC200415EB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93916253AC200415EB7 /* Foundation.framework */; };
+		DC00D93C16253AC200415EB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93B16253AC200415EB7 /* CoreGraphics.framework */; };
+		DC00D93E16253AC200415EB7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93D16253AC200415EB7 /* CoreData.framework */; };
+		DC00D94416253AC200415EB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC00D94216253AC200415EB7 /* InfoPlist.strings */; };
+		DC00D94616253AC200415EB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC00D94516253AC200415EB7 /* main.m */; };
+		DC00D94A16253AC200415EB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC00D94916253AC200415EB7 /* AppDelegate.m */; };
+		DC00D94C16253AC200415EB7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DC00D94B16253AC200415EB7 /* Default.png */; };
+		DC00D94E16253AC200415EB7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC00D94D16253AC200415EB7 /* Default@2x.png */; };
+		DC00D95016253AC300415EB7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC00D94F16253AC300415EB7 /* Default-568h@2x.png */; };
+		DC00D95316253AC300415EB7 /* ios_chatting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC00D95116253AC300415EB7 /* ios_chatting.xcdatamodeld */; };
+		DC00D95B16253AC300415EB7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D95A16253AC300415EB7 /* SenTestingKit.framework */; };
+		DC00D95C16253AC300415EB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93716253AC200415EB7 /* UIKit.framework */; };
+		DC00D95D16253AC300415EB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93916253AC200415EB7 /* Foundation.framework */; };
+		DC00D95E16253AC300415EB7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93D16253AC200415EB7 /* CoreData.framework */; };
+		DC00D96616253AC300415EB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC00D96416253AC300415EB7 /* InfoPlist.strings */; };
+		DC00D96916253AC300415EB7 /* ios_chattingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC00D96816253AC300415EB7 /* ios_chattingTests.m */; };
+		DC340FBE16255E0B00D8C902 /* RoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC340FBD16255E0B00D8C902 /* RoomListViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC00D95F16253AC300415EB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC00D92A16253AC200415EB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC00D93216253AC200415EB7;
+			remoteInfo = "ios-chatting";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC00D93316253AC200415EB7 /* ios-chatting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-chatting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC00D93716253AC200415EB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC00D93916253AC200415EB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC00D93B16253AC200415EB7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DC00D93D16253AC200415EB7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DC00D94116253AC200415EB7 /* ios-chatting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios-chatting-Info.plist"; sourceTree = "<group>"; };
+		DC00D94316253AC200415EB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC00D94516253AC200415EB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC00D94716253AC200415EB7 /* ios-chatting-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-chatting-Prefix.pch"; sourceTree = "<group>"; };
+		DC00D94816253AC200415EB7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DC00D94916253AC200415EB7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DC00D94B16253AC200415EB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DC00D94D16253AC200415EB7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DC00D94F16253AC300415EB7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DC00D95216253AC300415EB7 /* ios_chatting.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_chatting.xcdatamodel; sourceTree = "<group>"; };
+		DC00D95916253AC300415EB7 /* ios-chattingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-chattingTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC00D95A16253AC300415EB7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DC00D96316253AC300415EB7 /* ios-chattingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ios-chattingTests-Info.plist"; sourceTree = "<group>"; };
+		DC00D96516253AC300415EB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC00D96716253AC300415EB7 /* ios_chattingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_chattingTests.h; sourceTree = "<group>"; };
+		DC00D96816253AC300415EB7 /* ios_chattingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_chattingTests.m; sourceTree = "<group>"; };
+		DC340FBC16255E0B00D8C902 /* RoomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomListViewController.h; sourceTree = "<group>"; };
+		DC340FBD16255E0B00D8C902 /* RoomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomListViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC00D93016253AC200415EB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC00D93816253AC200415EB7 /* UIKit.framework in Frameworks */,
+				DC00D93A16253AC200415EB7 /* Foundation.framework in Frameworks */,
+				DC00D93C16253AC200415EB7 /* CoreGraphics.framework in Frameworks */,
+				DC00D93E16253AC200415EB7 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC00D95516253AC300415EB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC00D95B16253AC300415EB7 /* SenTestingKit.framework in Frameworks */,
+				DC00D95C16253AC300415EB7 /* UIKit.framework in Frameworks */,
+				DC00D95D16253AC300415EB7 /* Foundation.framework in Frameworks */,
+				DC00D95E16253AC300415EB7 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC00D92816253AC200415EB7 = {
+			isa = PBXGroup;
+			children = (
+				DC00D93F16253AC200415EB7 /* ios-chatting */,
+				DC00D96116253AC300415EB7 /* ios-chattingTests */,
+				DC00D93616253AC200415EB7 /* Frameworks */,
+				DC00D93416253AC200415EB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC00D93416253AC200415EB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC00D93316253AC200415EB7 /* ios-chatting.app */,
+				DC00D95916253AC300415EB7 /* ios-chattingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC00D93616253AC200415EB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC00D93716253AC200415EB7 /* UIKit.framework */,
+				DC00D93916253AC200415EB7 /* Foundation.framework */,
+				DC00D93B16253AC200415EB7 /* CoreGraphics.framework */,
+				DC00D93D16253AC200415EB7 /* CoreData.framework */,
+				DC00D95A16253AC300415EB7 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC00D93F16253AC200415EB7 /* ios-chatting */ = {
+			isa = PBXGroup;
+			children = (
+				DC00D94816253AC200415EB7 /* AppDelegate.h */,
+				DC00D94916253AC200415EB7 /* AppDelegate.m */,
+				DC00D95116253AC300415EB7 /* ios_chatting.xcdatamodeld */,
+				DC00D94016253AC200415EB7 /* Supporting Files */,
+				DC340FBC16255E0B00D8C902 /* RoomListViewController.h */,
+				DC340FBD16255E0B00D8C902 /* RoomListViewController.m */,
+			);
+			path = "ios-chatting";
+			sourceTree = "<group>";
+		};
+		DC00D94016253AC200415EB7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC00D94116253AC200415EB7 /* ios-chatting-Info.plist */,
+				DC00D94216253AC200415EB7 /* InfoPlist.strings */,
+				DC00D94516253AC200415EB7 /* main.m */,
+				DC00D94716253AC200415EB7 /* ios-chatting-Prefix.pch */,
+				DC00D94B16253AC200415EB7 /* Default.png */,
+				DC00D94D16253AC200415EB7 /* Default@2x.png */,
+				DC00D94F16253AC300415EB7 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC00D96116253AC300415EB7 /* ios-chattingTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC00D96716253AC300415EB7 /* ios_chattingTests.h */,
+				DC00D96816253AC300415EB7 /* ios_chattingTests.m */,
+				DC00D96216253AC300415EB7 /* Supporting Files */,
+			);
+			path = "ios-chattingTests";
+			sourceTree = "<group>";
+		};
+		DC00D96216253AC300415EB7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC00D96316253AC300415EB7 /* ios-chattingTests-Info.plist */,
+				DC00D96416253AC300415EB7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC00D93216253AC200415EB7 /* ios-chatting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC00D96C16253AC300415EB7 /* Build configuration list for PBXNativeTarget "ios-chatting" */;
+			buildPhases = (
+				DC00D92F16253AC200415EB7 /* Sources */,
+				DC00D93016253AC200415EB7 /* Frameworks */,
+				DC00D93116253AC200415EB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ios-chatting";
+			productName = "ios-chatting";
+			productReference = DC00D93316253AC200415EB7 /* ios-chatting.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC00D95816253AC300415EB7 /* ios-chattingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC00D96F16253AC300415EB7 /* Build configuration list for PBXNativeTarget "ios-chattingTests" */;
+			buildPhases = (
+				DC00D95416253AC300415EB7 /* Sources */,
+				DC00D95516253AC300415EB7 /* Frameworks */,
+				DC00D95616253AC300415EB7 /* Resources */,
+				DC00D95716253AC300415EB7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC00D96016253AC300415EB7 /* PBXTargetDependency */,
+			);
+			name = "ios-chattingTests";
+			productName = "ios-chattingTests";
+			productReference = DC00D95916253AC300415EB7 /* ios-chattingTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC00D92A16253AC200415EB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Chang woo Rhee";
+			};
+			buildConfigurationList = DC00D92D16253AC200415EB7 /* Build configuration list for PBXProject "ios-chatting" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC00D92816253AC200415EB7;
+			productRefGroup = DC00D93416253AC200415EB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC00D93216253AC200415EB7 /* ios-chatting */,
+				DC00D95816253AC300415EB7 /* ios-chattingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC00D93116253AC200415EB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC00D94416253AC200415EB7 /* InfoPlist.strings in Resources */,
+				DC00D94C16253AC200415EB7 /* Default.png in Resources */,
+				DC00D94E16253AC200415EB7 /* Default@2x.png in Resources */,
+				DC00D95016253AC300415EB7 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC00D95616253AC300415EB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC00D96616253AC300415EB7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DC00D95716253AC300415EB7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC00D92F16253AC200415EB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC00D94616253AC200415EB7 /* main.m in Sources */,
+				DC00D94A16253AC200415EB7 /* AppDelegate.m in Sources */,
+				DC00D95316253AC300415EB7 /* ios_chatting.xcdatamodeld in Sources */,
+				DC340FBE16255E0B00D8C902 /* RoomListViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC00D95416253AC300415EB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC00D96916253AC300415EB7 /* ios_chattingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC00D96016253AC300415EB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC00D93216253AC200415EB7 /* ios-chatting */;
+			targetProxy = DC00D95F16253AC300415EB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC00D94216253AC200415EB7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC00D94316253AC200415EB7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DC00D96416253AC300415EB7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC00D96516253AC300415EB7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC00D96A16253AC300415EB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC00D96B16253AC300415EB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC00D96D16253AC300415EB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-chatting/ios-chatting-Prefix.pch";
+				INFOPLIST_FILE = "ios-chatting/ios-chatting-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DC00D96E16253AC300415EB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-chatting/ios-chatting-Prefix.pch";
+				INFOPLIST_FILE = "ios-chatting/ios-chatting-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DC00D97016253AC300415EB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ios-chatting.app/ios-chatting";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-chatting/ios-chatting-Prefix.pch";
+				INFOPLIST_FILE = "ios-chattingTests/ios-chattingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DC00D97116253AC300415EB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ios-chatting.app/ios-chatting";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios-chatting/ios-chatting-Prefix.pch";
+				INFOPLIST_FILE = "ios-chattingTests/ios-chattingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC00D92D16253AC200415EB7 /* Build configuration list for PBXProject "ios-chatting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC00D96A16253AC300415EB7 /* Debug */,
+				DC00D96B16253AC300415EB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC00D96C16253AC300415EB7 /* Build configuration list for PBXNativeTarget "ios-chatting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC00D96D16253AC300415EB7 /* Debug */,
+				DC00D96E16253AC300415EB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC00D96F16253AC300415EB7 /* Build configuration list for PBXNativeTarget "ios-chattingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC00D97016253AC300415EB7 /* Debug */,
+				DC00D97116253AC300415EB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DC00D95116253AC300415EB7 /* ios_chatting.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC00D95216253AC300415EB7 /* ios_chatting.xcdatamodel */,
+			);
+			currentVersion = DC00D95216253AC300415EB7 /* ios_chatting.xcdatamodel */;
+			path = ios_chatting.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DC00D92A16253AC200415EB7 /* Project object */;
+}
