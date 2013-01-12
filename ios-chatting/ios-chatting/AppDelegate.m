@@ -20,6 +20,12 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    LoginViewController *loginViewController = [[LoginViewController alloc]init];
+    //    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self.window setRootViewController:loginViewController];
+
+    
     return YES;
 }
 

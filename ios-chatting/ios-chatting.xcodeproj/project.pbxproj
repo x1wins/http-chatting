@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB7176F8169E476300AE250A /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7176F7169E476300AE250A /* Message.m */; };
+		DB7176FC169E477000AE250A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7176FB169E477000AE250A /* User.m */; };
+		DBA76599169DE3C00036AA38 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA76597169DE3C00036AA38 /* SignupViewController.m */; };
+		DBA7659A169DE3C00036AA38 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA76598169DE3C00036AA38 /* SignupViewController.xib */; };
+		DBDD18D1169DD72200B79C9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDD18CF169DD72200B79C9A /* LoginViewController.m */; };
+		DBDD18D2169DD72200B79C9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDD18CF169DD72200B79C9A /* LoginViewController.m */; };
+		DBDD18D3169DD72200B79C9A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBDD18D0169DD72200B79C9A /* LoginViewController.xib */; };
+		DBDD18D4169DD72200B79C9A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBDD18D0169DD72200B79C9A /* LoginViewController.xib */; };
 		DC00D93816253AC200415EB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93716253AC200415EB7 /* UIKit.framework */; };
 		DC00D93A16253AC200415EB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93916253AC200415EB7 /* Foundation.framework */; };
 		DC00D93C16253AC200415EB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93B16253AC200415EB7 /* CoreGraphics.framework */; };
@@ -38,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB7176F6169E476300AE250A /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		DB7176F7169E476300AE250A /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		DB7176FA169E477000AE250A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		DB7176FB169E477000AE250A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		DBA76596169DE3C00036AA38 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		DBA76597169DE3C00036AA38 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		DBA76598169DE3C00036AA38 /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		DBDD18CE169DD72200B79C9A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		DBDD18CF169DD72200B79C9A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DBDD18D0169DD72200B79C9A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		DC00D93316253AC200415EB7 /* ios-chatting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-chatting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC00D93716253AC200415EB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DC00D93916253AC200415EB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -129,6 +147,16 @@
 				DC00D94016253AC200415EB7 /* Supporting Files */,
 				DC340FBC16255E0B00D8C902 /* RoomListViewController.h */,
 				DC340FBD16255E0B00D8C902 /* RoomListViewController.m */,
+				DBDD18CE169DD72200B79C9A /* LoginViewController.h */,
+				DBDD18CF169DD72200B79C9A /* LoginViewController.m */,
+				DBDD18D0169DD72200B79C9A /* LoginViewController.xib */,
+				DBA76596169DE3C00036AA38 /* SignupViewController.h */,
+				DBA76597169DE3C00036AA38 /* SignupViewController.m */,
+				DBA76598169DE3C00036AA38 /* SignupViewController.xib */,
+				DB7176F6169E476300AE250A /* Message.h */,
+				DB7176F7169E476300AE250A /* Message.m */,
+				DB7176FA169E477000AE250A /* User.h */,
+				DB7176FB169E477000AE250A /* User.m */,
 			);
 			path = "ios-chatting";
 			sourceTree = "<group>";
@@ -241,6 +269,8 @@
 				DC00D94C16253AC200415EB7 /* Default.png in Resources */,
 				DC00D94E16253AC200415EB7 /* Default@2x.png in Resources */,
 				DC00D95016253AC300415EB7 /* Default-568h@2x.png in Resources */,
+				DBDD18D3169DD72200B79C9A /* LoginViewController.xib in Resources */,
+				DBA7659A169DE3C00036AA38 /* SignupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC00D96616253AC300415EB7 /* InfoPlist.strings in Resources */,
+				DBDD18D4169DD72200B79C9A /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +310,10 @@
 				DC00D94A16253AC200415EB7 /* AppDelegate.m in Sources */,
 				DC00D95316253AC300415EB7 /* ios_chatting.xcdatamodeld in Sources */,
 				DC340FBE16255E0B00D8C902 /* RoomListViewController.m in Sources */,
+				DBDD18D1169DD72200B79C9A /* LoginViewController.m in Sources */,
+				DBA76599169DE3C00036AA38 /* SignupViewController.m in Sources */,
+				DB7176F8169E476300AE250A /* Message.m in Sources */,
+				DB7176FC169E477000AE250A /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC00D96916253AC300415EB7 /* ios_chattingTests.m in Sources */,
+				DBDD18D2169DD72200B79C9A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
