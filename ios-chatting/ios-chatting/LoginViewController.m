@@ -7,6 +7,10 @@
 //
 
 #import "LoginViewController.h"
+#import "common/CommonConst.h"
+#import "common/CommonUtil.h"
+#import "AFHTTPClient.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface LoginViewController ()
 
@@ -105,8 +109,9 @@
     }];
 }
 
+#pragma mark - event
 
-- (void) loginAction {
+- (void) login {
     
     [self switchAction];
     //    NSLog(@"idTextField.text %d",[idTextField.text isEqualToString:@""]);
@@ -227,10 +232,11 @@
         case 1:
             switch (indexPath.row) {
                 case 0:
-                    [self loginAction];
+                    [self login];
                     break;
                 case 1:
-                    [self showSignupModalView];
+                    [self test];
+//                    [self showSignupModalView];
                     break;
             }
             break;
@@ -255,11 +261,97 @@
     return sectionName;
 }
 
+//http send
+- (void)test
+{
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"test", @"userid",
+                            @"1",@"password",
+                            @"http://localhost:8080/FlowerPaper/",@"currentUrl",
+                            nil];
+    NSString *strUrl = @"http://localhost:8080/FlowerPaper/user/list.json";
+//    NSString *strUrl = @"http://localhost:8080/FlowerPaper/bbs/data/1/list/1.json";
+
+    NSURL *url = [NSURL URLWithString:strUrl];
+    AFHTTPClient *client = [[AFHTTPClient alloc]initWithBaseURL:url];
+    
+    //depending on what kind of response you expect.. change it if you expect XML
+    [client registerHTTPOperationClass:[AFHTTPRequestOperation class]];
+    
+    [client getPath:strUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"success");
+        NSLog(@"Request Successful, response '%@'", responseStr);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"failure");
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+    }];
+    
+    
+    //    [self.view removeFromSuperview];
+}
 
 //http send
 - (void) send
 {
     
+    
+    
+    //http://localhost:8080/FlowerPaper/user/signin?userid=test&password=1&currentUrl=http://localhost:8080/FlowerPaper/
+    
+    NSString *userid = @"test";
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            userid, @"userid",
+                            @"1",@"password",
+                            nil];
+    
+    NSString *strUrl = @"http://localhost:8080/FlowerPaper/user/signin.json";
+    NSURL *url = [NSURL URLWithString:strUrl];
+    AFHTTPClient *client = [[AFHTTPClient alloc]initWithBaseURL:url];
+    
+    //depending on what kind of response you expect.. change it if you expect XML
+    [client registerHTTPOperationClass:[AFHTTPRequestOperation class]];
+    
+    [client postPath:strUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"success");
+        NSLog(@"Request Successful, response '%@'", responseStr);
+        
+        
+        NSDictionary *dic = [[CommonUtil share] buildDictionaryJsonWithJsonString:responseStr];
+        NSString *sessionId = [[dic objectForKey:@"response"] objectForKey:@"result"];
+        
+        
+        {
+            // Dictionary of attributes for the new cookie
+            NSDictionary *newCookieDict = [NSMutableDictionary
+                                           dictionaryWithObjectsAndKeys:@"www.example.com", NSHTTPCookieDomain,
+                                           @"JSESSIONID", NSHTTPCookieName,
+                                           @"/", NSHTTPCookiePath,
+                                           sessionId, NSHTTPCookieValue,
+                                           @"0", NSHTTPCookieExpires
+                                           , nil];
+            
+            
+            NSHTTPCookie *newCookie = [NSHTTPCookie cookieWithProperties:newCookieDict];
+            
+            // Add the new cookie
+            [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:newCookie];
+            
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"failure");
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+    }];
+    
+    
+//    [self.view removeFromSuperview];
 }
 
 - (void)viewDidUnload

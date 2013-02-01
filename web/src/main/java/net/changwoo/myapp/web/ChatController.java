@@ -5,6 +5,7 @@ import java.util.Locale;
 
 import javax.validation.Valid;
 
+import net.changwoo.myapp.common.Common;
 import net.changwoo.myapp.entity.Join;
 import net.changwoo.myapp.entity.JsonResponse;
 import net.changwoo.myapp.entity.Message;
@@ -47,15 +48,15 @@ public class ChatController {
 		try{
 			int check = chatService.saveMessage(message);
 			if(!result.hasErrors() && check!=0){
-				res.setStatus("SUCCESS");
+				res.setStatus(Common.SUCCESS);
 				res.setResult(message);
 			}else{
-				res.setStatus("FAIL");
+				res.setStatus(Common.FAIL);
 				res.setResult(result.getAllErrors());
 			}
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
@@ -72,7 +73,7 @@ public class ChatController {
 		logger.debug("roomid = "+roomid);
 		
 		JsonResponse res = new JsonResponse();
-		String status = "SUCCESS";
+		String status = Common.SUCCESS;
 		
 		try{
 			List messages = chatService.findMessage(roomid);
@@ -80,7 +81,7 @@ public class ChatController {
 			res.setStatus(status);
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
@@ -96,15 +97,15 @@ public class ChatController {
 		try{
 			int check = chatService.saveJoin(join);
 			if(!result.hasErrors() && check!=0){
-				res.setStatus("SUCCESS");
+				res.setStatus(Common.SUCCESS);
 				res.setResult(join);
 			}else{
-				res.setStatus("FAIL");
+				res.setStatus(Common.FAIL);
 				res.setResult(result.getAllErrors());
 			}
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
@@ -119,7 +120,7 @@ public class ChatController {
 		logger.debug("userid = "+userid);
 		
 		JsonResponse res = new JsonResponse();
-		String status = "SUCCESS";
+		String status = Common.SUCCESS;
 		
 		try{
 			List joins = chatService.findUserJoins(userid);
@@ -127,7 +128,7 @@ public class ChatController {
 			res.setStatus(status);
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
@@ -143,7 +144,7 @@ public class ChatController {
 		logger.debug("roomid = "+roomid);
 		
 		JsonResponse res = new JsonResponse();
-		String status = "SUCCESS";
+		String status = Common.SUCCESS;
 		
 		try{
 			List joins = chatService.findRoomJoins(roomid);
@@ -151,7 +152,7 @@ public class ChatController {
 			res.setStatus(status);
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
@@ -167,14 +168,14 @@ public class ChatController {
 		logger.debug("roomid = "+roomid);
 		
 		JsonResponse res = new JsonResponse();
-		String status = "SUCCESS";
+		String status = Common.SUCCESS;
 		
 		try{
 			chatService.deleteJoin(userid, roomid);
 			res.setStatus(status);
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
@@ -190,15 +191,15 @@ public class ChatController {
 		try{
 			int check = chatService.saveRoom(room);
 			if(!result.hasErrors() && check!=0){
-				res.setStatus("SUCCESS");
+				res.setStatus(Common.SUCCESS);
 				res.setResult(room);
 			}else{
-				res.setStatus("FAIL");
+				res.setStatus(Common.FAIL);
 				res.setResult(result.getAllErrors());
 			}
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
@@ -212,7 +213,7 @@ public class ChatController {
 	public String findRoom(Locale locale, Model model) {
 		
 		JsonResponse res = new JsonResponse();
-		String status = "SUCCESS";
+		String status = Common.SUCCESS;
 		
 		try{
 			List rooms = chatService.findRooms();
@@ -220,7 +221,7 @@ public class ChatController {
 			res.setStatus(status);
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
@@ -236,14 +237,14 @@ public class ChatController {
 		logger.debug("roomid = "+roomid);
 		
 		JsonResponse res = new JsonResponse();
-		String status = "SUCCESS";
+		String status = Common.SUCCESS;
 		
 		try{
 			chatService.deleteRoom(userid, roomid);
 			res.setStatus(status);
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
@@ -259,14 +260,14 @@ public class ChatController {
 		logger.debug("room.getMasterUserid = "+room.getMasterUserid());
 		
 		JsonResponse res = new JsonResponse();
-		String status = "SUCCESS";
+		String status = Common.SUCCESS;
 		
 		try{
 			chatService.updateRoom(room);
 			res.setStatus(status);
 		}catch(Exception e){
 			logger.debug(e.getMessage());
-			res.setStatus("FAIL");
+			res.setStatus(Common.FAIL);
 			res.setResult(e.getMessage());
 		}
 		model.addAttribute("res",res);
