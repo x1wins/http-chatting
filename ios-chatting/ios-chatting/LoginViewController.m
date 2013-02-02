@@ -132,7 +132,7 @@
         return;
     }
     
-    [self send];
+    [self requestLogin];
     
 }
 
@@ -295,18 +295,15 @@
 }
 
 //http send
-- (void) send
+- (void) requestLogin
 {
     
-    
-    
-    //http://localhost:8080/FlowerPaper/user/signin?userid=test&password=1&currentUrl=http://localhost:8080/FlowerPaper/
-    
-    NSString *userid = @"test";
+    NSString *userid = _idTextField.text;
+    NSString *password = _pwTextField.text;
     
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             userid, @"userid",
-                            @"1",@"password",
+                            password, @"password",
                             nil];
     
     NSString *strUrl = @"http://localhost:8080/FlowerPaper/user/signin.json";
@@ -343,6 +340,8 @@
             // Add the new cookie
             [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:newCookie];
             
+            [self.view removeFromSuperview];
+            
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -350,8 +349,6 @@
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
     }];
     
-    
-//    [self.view removeFromSuperview];
 }
 
 - (void)viewDidUnload

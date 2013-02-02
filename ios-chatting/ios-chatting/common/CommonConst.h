@@ -9,7 +9,7 @@
 #ifndef ios_chatting_CommonConst_h
 #define ios_chatting_CommonConst_h
 
-#define DOMAIN @"www.changwoo.net"
-#define HTTP_SERVER_URL @"localhost:8080"
+#define COOKIE_DOMAIN @"www.changwoo.net"
+#define SERVER_URL_HTTP @"http://localhost:8080/FlowerPaper/%@"
 
 #endif

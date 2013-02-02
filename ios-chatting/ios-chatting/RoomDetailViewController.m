@@ -1,28 +1,28 @@
 //
-//  RoomListViewController.m
+//  RoomDetailViewController.m
 //  ios-chatting
 //
 //  Created by Rhee Chang-Woo on 13. 2. 2..
 //  Copyright (c) 2013년 Chang woo Rhee. All rights reserved.
 //
 
-#import "RoomListViewController.h"
+#import "RoomDetailViewController.h"
 
 #import "common/CommonConst.h"
 #import "common/CommonUtil.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 
-#import "RoomDetailViewController.h"
+#import "RoomDetailCell.h"
 #import "Message.h"
 
-@interface RoomListViewController ()
+@interface RoomDetailViewController ()
 
 @end
 
-@implementation RoomListViewController
+@implementation RoomDetailViewController
 
-@synthesize datas = _datas;
+@synthesize roomId = _roomId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +30,6 @@
     if (self) {
         // Custom initialization
         self.datas = [[NSMutableArray alloc] init];
-        
     }
     return self;
 }
@@ -39,6 +38,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     [self reloadDatas];
 }
 
@@ -48,11 +48,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - my Function
+#pragma mark - request to server
 - (void) reloadDatas
 {
     
-    NSString *strUrl = [NSString stringWithFormat:SERVER_URL_HTTP,@"chat/room/find"];
+    NSString *path = [NSString stringWithFormat:@"chat/message/find/%lld",_roomId];
+    NSString *strUrl = [NSString stringWithFormat:SERVER_URL_HTTP,path];
     
     NSURL *url = [NSURL URLWithString:strUrl];
     AFHTTPClient *client = [[AFHTTPClient alloc]initWithBaseURL:url];
@@ -66,35 +67,15 @@
         NSLog(@"success");
         NSLog(@"Request Successful, response '%@'", responseStr);
         
-        NSDictionary *dataDic = [[CommonUtil share] buildDictionaryJsonWithJsonString:responseStr];
-//        NSArray *results = [NSMutableArray arrayWithArray:[[dataDic objectForKey:@"res"] objectForKey:@"result"]];
-//        _datas = [NSMutableArray arrayWithArray:[[CommonUtil share] messagesWithResults:results]];
-        _datas = [NSMutableArray arrayWithArray:[[dataDic objectForKey:@"res"] objectForKey:@"result"]];
+        _datas = [NSMutableArray arrayWithArray:[[CommonUtil share] messagesWithResponseStr:responseStr]];
         
         [_mainTableView reloadData];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"failure");
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
     }];
-
-}
-
-#pragma mark - getter
-
-- (NSString*) roomSubjectWithIndexPath:(NSIndexPath *)indexPath
-{
-    NSDictionary *dic = [_datas objectAtIndex:indexPath.row];
-    NSString *subject = [dic objectForKey:@"subject"];
     
-    return subject;
-}
-
-- (SInt64) roomIdWithIndexPath:(NSIndexPath *)indexPath
-{
-    NSDictionary *dic = [_datas objectAtIndex:indexPath.row];
-    SInt64 roomId = [[dic objectForKey:@"id"] longLongValue];
-    
-    return roomId;
 }
 
 #pragma mark - table delegate
@@ -113,45 +94,37 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"RoomDetailCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    RoomDetailCell *cell = (RoomDetailCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[RoomDetailCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        
+        NSArray *array = [[NSBundle mainBundle]loadNibNamed:@"RoomDetailCell" owner:nil options:nil];
+        cell = [array objectAtIndex:0];
+        
     }
     
-    NSDictionary *dic = [_datas objectAtIndex:indexPath.row];
-    NSString *subject = [dic objectForKey:@"subject"];
+    Message *message = [_datas objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = subject;
-    
+    [cell setFrameWithMessage:message];
+
     // Configure the cell...
-    cell.selectionStyle = YES;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle = NO;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     return cell;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *) indexPath{
     
-    int height = 50;
+    Message *message = [_datas objectAtIndex:indexPath.row];
+    NSLog(@"message.cellHeight %d",message.cellHeight);
+    int height = message.cellHeight;
     return height;
-}
-
-
-//cell click event
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    RoomDetailViewController *roomDetailViewController = [[RoomDetailViewController alloc]init];
-    roomDetailViewController.title = [self roomSubjectWithIndexPath:indexPath];
-    roomDetailViewController.roomId = [self roomIdWithIndexPath:indexPath];
-    
-    [self.navigationController pushViewController:roomDetailViewController animated:YES];
-    
 }
 
 

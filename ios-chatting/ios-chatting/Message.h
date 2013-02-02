@@ -10,10 +10,16 @@
 
 @interface Message : NSObject
 
-@property (strong, nonatomic) NSString *userid;
+@property (strong, nonatomic) NSString *messageid;
+@property (assign, nonatomic) SInt64 userid;
 @property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *type;
-@property (strong, nonatomic) NSString *message;
+@property (strong, nonatomic) NSString *imgUrl;
+@property (strong, nonatomic) NSString *content;
 @property (strong, nonatomic) NSString *date;
+@property (assign, nonatomic) int cellHeight;
+@property (assign, nonatomic) int textHeight;
+@property (assign, nonatomic) int bgHeight;
+
++ (id) setMessageid:(NSString*)messageid userid:(SInt64)userid username:(NSString *)username imgUrl:(NSString *)imgUrl content:(NSString *)content date:(NSString *)date;
 
 @end

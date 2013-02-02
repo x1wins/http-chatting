@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "RoomListViewController.h"
 
 @implementation AppDelegate
 
@@ -21,10 +23,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    LoginViewController *loginViewController = [[LoginViewController alloc]init];
+//    LoginViewController *loginViewController = [[LoginViewController alloc]init];
     //    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-    [self.window setRootViewController:loginViewController];
-
+//    [self.window setRootViewController:loginViewController];    
+    
+    RoomListViewController *roomListViewController = [[RoomListViewController alloc]init];
+    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:roomListViewController];
+    [self.window setRootViewController:navigationController];
     
     return YES;
 }

@@ -20,10 +20,8 @@
 @property (strong, nonatomic) UISwitch *loginSwitch;
 @property (strong, nonatomic) UIActivityIndicatorView * indicate;
 
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 - (void) switchAction;
-- (void) loginAction;
 - (void) focusUp;
-- (void) send;
 
 @end

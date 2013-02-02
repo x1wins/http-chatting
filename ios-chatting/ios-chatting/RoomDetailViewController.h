@@ -1,5 +1,5 @@
 //
-//  RoomListViewController.h
+//  RoomDetailViewController.h
 //  ios-chatting
 //
 //  Created by Rhee Chang-Woo on 13. 2. 2..
@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RoomListViewController : UIViewController
-
+@interface RoomDetailViewController : UIViewController
+{
+    
+}
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) NSMutableArray *datas;
+@property (assign, nonatomic) SInt64 roomId;
 
 @end

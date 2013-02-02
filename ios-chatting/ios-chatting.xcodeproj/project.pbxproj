@@ -11,6 +11,20 @@
 		DB2F4D0016BC4EA700DA496C /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2F4CFE16BC4EA700DA496C /* CommonUtil.m */; };
 		DB7176F8169E476300AE250A /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7176F7169E476300AE250A /* Message.m */; };
 		DB7176FC169E477000AE250A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DB7176FB169E477000AE250A /* User.m */; };
+		DB791A4416BD0801006A106F /* RoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB791A4216BD0801006A106F /* RoomListViewController.m */; };
+		DB791A4516BD0801006A106F /* RoomListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB791A4316BD0801006A106F /* RoomListViewController.xib */; };
+		DB791A4916BD26B0006A106F /* RoomDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB791A4716BD26B0006A106F /* RoomDetailViewController.m */; };
+		DB791A4A16BD26B0006A106F /* RoomDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB791A4816BD26B0006A106F /* RoomDetailViewController.xib */; };
+		DB791A4D16BD27A9006A106F /* RoomDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB791A4C16BD27A9006A106F /* RoomDetailCell.m */; };
+		DB791A5516BD2934006A106F /* RoomDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB791A5416BD2934006A106F /* RoomDetailCell.xib */; };
+		DB791A5F16BD4567006A106F /* MessageBubbleBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = DB791A5716BD4567006A106F /* MessageBubbleBlue.png */; };
+		DB791A6016BD4567006A106F /* MessageBubbleBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB791A5816BD4567006A106F /* MessageBubbleBlue@2x.png */; };
+		DB791A6116BD4567006A106F /* MessageBubbleGray.png in Resources */ = {isa = PBXBuildFile; fileRef = DB791A5916BD4567006A106F /* MessageBubbleGray.png */; };
+		DB791A6216BD4567006A106F /* MessageBubbleGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB791A5A16BD4567006A106F /* MessageBubbleGray@2x.png */; };
+		DB791A6316BD4567006A106F /* SendButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DB791A5B16BD4567006A106F /* SendButton.png */; };
+		DB791A6416BD4567006A106F /* SendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB791A5C16BD4567006A106F /* SendButton@2x.png */; };
+		DB791A6516BD4567006A106F /* SendButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = DB791A5D16BD4567006A106F /* SendButtonHighlighted.png */; };
+		DB791A6616BD4567006A106F /* SendButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB791A5E16BD4567006A106F /* SendButtonHighlighted@2x.png */; };
 		DB8EB27216A2889E00FFF6C4 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8EB26016A2889E00FFF6C4 /* AFHTTPClient.m */; };
 		DB8EB27316A2889E00FFF6C4 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8EB26016A2889E00FFF6C4 /* AFHTTPClient.m */; };
 		DB8EB27416A2889E00FFF6C4 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8EB26216A2889E00FFF6C4 /* AFHTTPRequestOperation.m */; };
@@ -52,7 +66,6 @@
 		DC00D95E16253AC300415EB7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC00D93D16253AC200415EB7 /* CoreData.framework */; };
 		DC00D96616253AC300415EB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC00D96416253AC300415EB7 /* InfoPlist.strings */; };
 		DC00D96916253AC300415EB7 /* ios_chattingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC00D96816253AC300415EB7 /* ios_chattingTests.m */; };
-		DC340FBE16255E0B00D8C902 /* RoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC340FBD16255E0B00D8C902 /* RoomListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +86,23 @@
 		DB7176F7169E476300AE250A /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		DB7176FA169E477000AE250A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		DB7176FB169E477000AE250A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		DB791A4116BD0801006A106F /* RoomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomListViewController.h; sourceTree = "<group>"; };
+		DB791A4216BD0801006A106F /* RoomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomListViewController.m; sourceTree = "<group>"; };
+		DB791A4316BD0801006A106F /* RoomListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomListViewController.xib; sourceTree = "<group>"; };
+		DB791A4616BD26B0006A106F /* RoomDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomDetailViewController.h; sourceTree = "<group>"; };
+		DB791A4716BD26B0006A106F /* RoomDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomDetailViewController.m; sourceTree = "<group>"; };
+		DB791A4816BD26B0006A106F /* RoomDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomDetailViewController.xib; sourceTree = "<group>"; };
+		DB791A4B16BD27A9006A106F /* RoomDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomDetailCell.h; sourceTree = "<group>"; };
+		DB791A4C16BD27A9006A106F /* RoomDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomDetailCell.m; sourceTree = "<group>"; };
+		DB791A5416BD2934006A106F /* RoomDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoomDetailCell.xib; sourceTree = "<group>"; };
+		DB791A5716BD4567006A106F /* MessageBubbleBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageBubbleBlue.png; sourceTree = "<group>"; };
+		DB791A5816BD4567006A106F /* MessageBubbleBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageBubbleBlue@2x.png"; sourceTree = "<group>"; };
+		DB791A5916BD4567006A106F /* MessageBubbleGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageBubbleGray.png; sourceTree = "<group>"; };
+		DB791A5A16BD4567006A106F /* MessageBubbleGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageBubbleGray@2x.png"; sourceTree = "<group>"; };
+		DB791A5B16BD4567006A106F /* SendButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SendButton.png; sourceTree = "<group>"; };
+		DB791A5C16BD4567006A106F /* SendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendButton@2x.png"; sourceTree = "<group>"; };
+		DB791A5D16BD4567006A106F /* SendButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SendButtonHighlighted.png; sourceTree = "<group>"; };
+		DB791A5E16BD4567006A106F /* SendButtonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SendButtonHighlighted@2x.png"; sourceTree = "<group>"; };
 		DB8EB25F16A2889E00FFF6C4 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		DB8EB26016A2889E00FFF6C4 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		DB8EB26116A2889E00FFF6C4 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -119,8 +149,6 @@
 		DC00D96516253AC300415EB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DC00D96716253AC300415EB7 /* ios_chattingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_chattingTests.h; sourceTree = "<group>"; };
 		DC00D96816253AC300415EB7 /* ios_chattingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_chattingTests.m; sourceTree = "<group>"; };
-		DC340FBC16255E0B00D8C902 /* RoomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomListViewController.h; sourceTree = "<group>"; };
-		DC340FBD16255E0B00D8C902 /* RoomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +185,21 @@
 				DB2F4CFE16BC4EA700DA496C /* CommonUtil.m */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		DB791A5616BD4567006A106F /* image */ = {
+			isa = PBXGroup;
+			children = (
+				DB791A5716BD4567006A106F /* MessageBubbleBlue.png */,
+				DB791A5816BD4567006A106F /* MessageBubbleBlue@2x.png */,
+				DB791A5916BD4567006A106F /* MessageBubbleGray.png */,
+				DB791A5A16BD4567006A106F /* MessageBubbleGray@2x.png */,
+				DB791A5B16BD4567006A106F /* SendButton.png */,
+				DB791A5C16BD4567006A106F /* SendButton@2x.png */,
+				DB791A5D16BD4567006A106F /* SendButtonHighlighted.png */,
+				DB791A5E16BD4567006A106F /* SendButtonHighlighted@2x.png */,
+			);
+			path = image;
 			sourceTree = "<group>";
 		};
 		DB8EB25116A2885B00FFF6C4 /* ThirdParty */ = {
@@ -227,14 +270,13 @@
 		DC00D93F16253AC200415EB7 /* ios-chatting */ = {
 			isa = PBXGroup;
 			children = (
+				DB791A5616BD4567006A106F /* image */,
 				DB2F4CFB16BC38C200DA496C /* common */,
 				DB8EB25116A2885B00FFF6C4 /* ThirdParty */,
 				DC00D94816253AC200415EB7 /* AppDelegate.h */,
 				DC00D94916253AC200415EB7 /* AppDelegate.m */,
 				DC00D95116253AC300415EB7 /* ios_chatting.xcdatamodeld */,
 				DC00D94016253AC200415EB7 /* Supporting Files */,
-				DC340FBC16255E0B00D8C902 /* RoomListViewController.h */,
-				DC340FBD16255E0B00D8C902 /* RoomListViewController.m */,
 				DBDD18CE169DD72200B79C9A /* LoginViewController.h */,
 				DBDD18CF169DD72200B79C9A /* LoginViewController.m */,
 				DBDD18D0169DD72200B79C9A /* LoginViewController.xib */,
@@ -245,6 +287,15 @@
 				DB7176F7169E476300AE250A /* Message.m */,
 				DB7176FA169E477000AE250A /* User.h */,
 				DB7176FB169E477000AE250A /* User.m */,
+				DB791A4116BD0801006A106F /* RoomListViewController.h */,
+				DB791A4216BD0801006A106F /* RoomListViewController.m */,
+				DB791A4316BD0801006A106F /* RoomListViewController.xib */,
+				DB791A4616BD26B0006A106F /* RoomDetailViewController.h */,
+				DB791A4716BD26B0006A106F /* RoomDetailViewController.m */,
+				DB791A4816BD26B0006A106F /* RoomDetailViewController.xib */,
+				DB791A4B16BD27A9006A106F /* RoomDetailCell.h */,
+				DB791A4C16BD27A9006A106F /* RoomDetailCell.m */,
+				DB791A5416BD2934006A106F /* RoomDetailCell.xib */,
 			);
 			path = "ios-chatting";
 			sourceTree = "<group>";
@@ -359,6 +410,17 @@
 				DC00D95016253AC300415EB7 /* Default-568h@2x.png in Resources */,
 				DBDD18D3169DD72200B79C9A /* LoginViewController.xib in Resources */,
 				DBA7659A169DE3C00036AA38 /* SignupViewController.xib in Resources */,
+				DB791A4516BD0801006A106F /* RoomListViewController.xib in Resources */,
+				DB791A4A16BD26B0006A106F /* RoomDetailViewController.xib in Resources */,
+				DB791A5516BD2934006A106F /* RoomDetailCell.xib in Resources */,
+				DB791A5F16BD4567006A106F /* MessageBubbleBlue.png in Resources */,
+				DB791A6016BD4567006A106F /* MessageBubbleBlue@2x.png in Resources */,
+				DB791A6116BD4567006A106F /* MessageBubbleGray.png in Resources */,
+				DB791A6216BD4567006A106F /* MessageBubbleGray@2x.png in Resources */,
+				DB791A6316BD4567006A106F /* SendButton.png in Resources */,
+				DB791A6416BD4567006A106F /* SendButton@2x.png in Resources */,
+				DB791A6516BD4567006A106F /* SendButtonHighlighted.png in Resources */,
+				DB791A6616BD4567006A106F /* SendButtonHighlighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +459,6 @@
 				DC00D94616253AC200415EB7 /* main.m in Sources */,
 				DC00D94A16253AC200415EB7 /* AppDelegate.m in Sources */,
 				DC00D95316253AC300415EB7 /* ios_chatting.xcdatamodeld in Sources */,
-				DC340FBE16255E0B00D8C902 /* RoomListViewController.m in Sources */,
 				DBDD18D1169DD72200B79C9A /* LoginViewController.m in Sources */,
 				DBA76599169DE3C00036AA38 /* SignupViewController.m in Sources */,
 				DB7176F8169E476300AE250A /* Message.m in Sources */,
@@ -412,6 +473,9 @@
 				DB8EB28016A2889E00FFF6C4 /* AFXMLRequestOperation.m in Sources */,
 				DB8EB28216A2889E00FFF6C4 /* UIImageView+AFNetworking.m in Sources */,
 				DB2F4CFF16BC4EA700DA496C /* CommonUtil.m in Sources */,
+				DB791A4416BD0801006A106F /* RoomListViewController.m in Sources */,
+				DB791A4916BD26B0006A106F /* RoomDetailViewController.m in Sources */,
+				DB791A4D16BD27A9006A106F /* RoomDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

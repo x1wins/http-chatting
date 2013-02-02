@@ -10,6 +10,8 @@
 
 @interface CommonUtil : NSObject
 + (id) share;
+- (int) heightWithText:(NSString*)text font:(UIFont*)font;
+- (NSArray*) messagesWithResponseStr:(NSString*)results;
 - (NSString*) buildStringJsonWithDictionaly:(NSDictionary*)dic;
 - (NSDictionary*) buildDictionaryJsonWithJsonString:(NSString*)jsonString;
 
