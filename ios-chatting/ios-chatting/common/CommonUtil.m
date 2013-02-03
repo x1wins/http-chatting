@@ -39,6 +39,18 @@
 	[hud hide:YES afterDelay:1.5];
 }
 
+- (void) bulidCloseButton:(UIViewController*)viewController sel:(SEL)method
+{
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:viewController action:method];
+    viewController.navigationItem.leftBarButtonItem = rightButton;
+}
+
+- (void) bulidNavigationRightRefreshButton:(UIViewController*)viewController sel:(SEL)method
+{
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:viewController action:method];
+    viewController.navigationItem.rightBarButtonItem = rightButton;
+}
+
 - (int) heightWithText:(NSString*)text font:(UIFont*)font
 {
     CGSize  sizeTemp = CGSizeMake(218.0f, 2000.0f);

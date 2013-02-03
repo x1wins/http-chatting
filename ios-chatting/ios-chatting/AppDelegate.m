@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
-#import "RoomListViewController.h"
 #import "MyInfo.h"
 
 @implementation AppDelegate
@@ -17,22 +15,38 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+
+#pragma mark - loginViewController delegate
+-(void) loginSuccess:(LoginViewController*)loginViewController
+{
+    RoomListViewController *roomListViewController = [[RoomListViewController alloc]init];
+    roomListViewController.delegate = self;
+    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:roomListViewController];
+    [self.window setRootViewController:navigationController];
+}
+
+#pragma mark - roomListViewController delegate
+-(void) loginOut:(RoomListViewController*)roomListViewController
+{
+    [self buildLoginViewController];
+}
+
+- (void) buildLoginViewController
+{
+    LoginViewController *loginViewController = [[LoginViewController alloc]init];
+    loginViewController.delegate = self;
+    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    [self.window setRootViewController:navigationController];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
-//    LoginViewController *loginViewController = [[LoginViewController alloc]init];
-    //    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-//    [self.window setRootViewController:loginViewController];
-    
-    [[MyInfo share] setUserid:1 username:@"changwoo"];
-    
-    RoomListViewController *roomListViewController = [[RoomListViewController alloc]init];
-    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:roomListViewController];
-    [self.window setRootViewController:navigationController];
+
+    [self buildLoginViewController];
     
     return YES;
 }

@@ -11,6 +11,8 @@
 @interface CommonUtil : NSObject
 + (id) share;
 - (void) bulidErrorView:(UIViewController*)viewController;
+- (void) bulidCloseButton:(UIViewController*)viewController sel:(SEL)method;
+- (void) bulidNavigationRightRefreshButton:(UIViewController*)viewController sel:(SEL)method;
 - (int) heightWithText:(NSString*)text font:(UIFont*)font;
 - (NSArray*) messagesWithResponseStr:(NSString*)results;
 - (NSString*) buildStringJsonWithDictionaly:(NSDictionary*)dic;

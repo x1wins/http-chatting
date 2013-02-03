@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "SignupViewController.h"
 
+@protocol LoginViewDelegate;
+
 @interface LoginViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     
 }
+
+@property (nonatomic, assign) id<LoginViewDelegate> delegate;
 
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) UITextField *idTextField;
@@ -25,3 +29,8 @@
 - (void) focusUp;
 
 @end
+
+@protocol LoginViewDelegate <NSObject>
+-(void) loginSuccess:(LoginViewController*)loginViewController;
+@end
+

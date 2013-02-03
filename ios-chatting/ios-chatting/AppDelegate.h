@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginViewController.h"
+#import "RoomListViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, LoginViewDelegate, RoomListViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

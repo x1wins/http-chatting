@@ -12,6 +12,8 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 
+#import "MyInfo.h"
+
 @interface LoginViewController ()
 
 @end
@@ -235,8 +237,8 @@
                     [self login];
                     break;
                 case 1:
-                    [self test];
-//                    [self showSignupModalView];
+//                    [self test];
+                    [self showSignupModalView];
                     break;
             }
             break;
@@ -305,8 +307,7 @@
                             userid, @"userid",
                             password, @"password",
                             nil];
-    
-    NSString *strUrl = @"http://localhost:8080/FlowerPaper/user/signin.json";
+    NSString *strUrl = [NSString stringWithFormat:SERVER_URL_HTTP,@"user/signin.json"];
     NSURL *url = [NSURL URLWithString:strUrl];
     AFHTTPClient *client = [[AFHTTPClient alloc]initWithBaseURL:url];
     
@@ -341,6 +342,11 @@
             [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:newCookie];
             
             [self.view removeFromSuperview];
+            
+            [[MyInfo share] setUserid:1 username:@"changwoo"];
+            
+            [self.delegate loginSuccess:self];
+            
             
         }
         

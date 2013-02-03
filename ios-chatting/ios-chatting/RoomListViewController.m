@@ -42,6 +42,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self reloadDatas];
+    [[CommonUtil share] bulidNavigationRightRefreshButton:self sel:@selector(reloadDatas)];
+    [[CommonUtil share] bulidCloseButton:self sel:@selector(logOut)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +53,11 @@
 }
 
 #pragma mark - my Function
+- (void) logOut
+{
+    [self.delegate loginOut:self];
+}
+
 - (void) reloadDatas
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
