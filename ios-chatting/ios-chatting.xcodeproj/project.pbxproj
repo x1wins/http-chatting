@@ -36,6 +36,9 @@
 		DB9D7DE416BE21990001E80F /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9D7DDA16BE21990001E80F /* AFXMLRequestOperation.m */; };
 		DB9D7DE516BE21990001E80F /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9D7DDC16BE21990001E80F /* UIImageView+AFNetworking.m */; };
 		DB9D7E2B16BE3A430001E80F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9D7E2A16BE3A430001E80F /* MBProgressHUD.m */; };
+		DB9D7E3016BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.39.36.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9D7E2D16BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.39.36.png */; };
+		DB9D7E3116BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.40.16.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9D7E2E16BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.40.16.png */; };
+		DB9D7E3216BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.42.03.png in Resources */ = {isa = PBXBuildFile; fileRef = DB9D7E2F16BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.42.03.png */; };
 		DBA76599169DE3C00036AA38 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA76597169DE3C00036AA38 /* SignupViewController.m */; };
 		DBA7659A169DE3C00036AA38 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA76598169DE3C00036AA38 /* SignupViewController.xib */; };
 		DBDD18D1169DD72200B79C9A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDD18CF169DD72200B79C9A /* LoginViewController.m */; };
@@ -119,6 +122,9 @@
 		DB9D7DDC16BE21990001E80F /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		DB9D7E2916BE3A430001E80F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		DB9D7E2A16BE3A430001E80F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		DB9D7E2D16BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.39.36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen shot 2013. 2. 3. 오후 3.39.36.png"; sourceTree = "<group>"; };
+		DB9D7E2E16BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.40.16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen shot 2013. 2. 3. 오후 3.40.16.png"; sourceTree = "<group>"; };
+		DB9D7E2F16BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.42.03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen shot 2013. 2. 3. 오후 3.42.03.png"; sourceTree = "<group>"; };
 		DBA76596169DE3C00036AA38 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		DBA76597169DE3C00036AA38 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		DBA76598169DE3C00036AA38 /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 		DB791A5616BD4567006A106F /* image */ = {
 			isa = PBXGroup;
 			children = (
+				DB9D7E2C16BE3F060001E80F /* screenshot */,
 				DB791A5716BD4567006A106F /* MessageBubbleBlue.png */,
 				DB791A5816BD4567006A106F /* MessageBubbleBlue@2x.png */,
 				DB791A5916BD4567006A106F /* MessageBubbleGray.png */,
@@ -243,6 +250,16 @@
 			);
 			name = MBProgressHUD;
 			path = ThirdParty/MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		DB9D7E2C16BE3F060001E80F /* screenshot */ = {
+			isa = PBXGroup;
+			children = (
+				DB9D7E2D16BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.39.36.png */,
+				DB9D7E2E16BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.40.16.png */,
+				DB9D7E2F16BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.42.03.png */,
+			);
+			path = screenshot;
 			sourceTree = "<group>";
 		};
 		DC00D92816253AC200415EB7 = {
@@ -432,6 +449,9 @@
 				DB791A6416BD4567006A106F /* SendButton@2x.png in Resources */,
 				DB791A6516BD4567006A106F /* SendButtonHighlighted.png in Resources */,
 				DB791A6616BD4567006A106F /* SendButtonHighlighted@2x.png in Resources */,
+				DB9D7E3016BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.39.36.png in Resources */,
+				DB9D7E3116BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.40.16.png in Resources */,
+				DB9D7E3216BE3F060001E80F /* iOS Simulator Screen shot 2013. 2. 3. 오후 3.42.03.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
