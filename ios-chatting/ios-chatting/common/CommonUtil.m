@@ -8,9 +8,9 @@
 
 #import "CommonUtil.h"
 #import "Message.h"
+#import "MBProgressHUD.h"
 
 @implementation CommonUtil
-
 
 + (id) share {
     static CommonUtil *singleton = nil;
@@ -24,6 +24,19 @@
     }
     
     return singleton;
+}
+
+- (void) bulidErrorView:(UIViewController*)viewController
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:viewController.navigationController.view animated:YES];
+	
+	// Configure for text only and offset down
+	hud.mode = MBProgressHUDModeText;
+	hud.labelText = @"Network Error";
+	hud.margin = 10.f;
+	hud.yOffset = 150.f;
+	hud.removeFromSuperViewOnHide = YES;
+	[hud hide:YES afterDelay:1.5];
 }
 
 - (int) heightWithText:(NSString*)text font:(UIFont*)font
@@ -48,13 +61,14 @@
     for (int i = 0; i < [results count]; i++)
     {
         NSDictionary *dic = [results objectAtIndex:i];
-        NSString *messageid = [dic objectForKey:@"id"];
+        SInt64 roomid = [dic objectForKey:@"roomid"];
+        SInt64 messageid = [dic objectForKey:@"id"];
         SInt64 userid    = [[dic objectForKey:@"userid"] longLongValue];
         NSString *username  = nil;//[dic objectForKey:@"userid"];
         NSString *imgUrl    = nil;
         NSString *content   = [dic objectForKey:@"content"];
         NSString *date      = nil;
-        [datas addObject:[Message setMessageid:messageid userid:userid username:username imgUrl:imgUrl content:content date:date]];
+        [datas addObject:[Message setRoomid:roomid messageid:messageid userid:userid username:username imgUrl:imgUrl content:content date:date]];
     }
     return datas;
 }
@@ -94,6 +108,19 @@
                                       error: &error];
     
     return jsonDic;
+}
+
+- (void) buildErrorView:(UIViewController*)viewController jsonString:(NSString*)jsonString
+{
+    NSDictionary *dataDic = [self buildDictionaryJsonWithJsonString:jsonString];
+    
+    NSString* status = [[dataDic objectForKey:@"res"] objectForKey:@"status"];
+    [MBProgressHUD hideHUDForView:viewController.view animated:YES];
+    
+    if(![status isEqualToString:@"SUCCESS"])
+    {
+        [[CommonUtil share] bulidErrorView:viewController];
+    }
 }
 
 @end

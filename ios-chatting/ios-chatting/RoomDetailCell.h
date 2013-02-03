@@ -16,7 +16,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *message;
 @property (strong, nonatomic) IBOutlet UIImageView *messageBgImage;
 
-
 - (void)setFrameWithMessage:(Message *)message;
 
 @end

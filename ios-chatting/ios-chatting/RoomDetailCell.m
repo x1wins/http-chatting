@@ -7,8 +7,14 @@
 //
 
 #import "RoomDetailCell.h"
+#import "MyInfo.h"
 
 @implementation RoomDetailCell
+
+@synthesize userImage = _userImage;
+@synthesize userName = _userName;
+@synthesize message = _message;
+@synthesize messageBgImage = _messageBgImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -37,10 +43,19 @@
     
     _messageBgImage.frame = CGRectMake(_messageBgImage.frame.origin.x, _messageBgImage.frame.origin.y, _messageBgImage.frame.size.width, message.bgHeight);
     
-    UIImage *messageBubbleGray = [[UIImage imageNamed:@"MessageBubbleGray"] stretchableImageWithLeftCapWidth:23 topCapHeight:15];
-    UIImage *messageBubbleBlue = [[UIImage imageNamed:@"MessageBubbleBlue"] stretchableImageWithLeftCapWidth:15 topCapHeight:13];
     
-    _messageBgImage.image = messageBubbleGray;
+    NSString *bubbleImageName;
+    SInt64 myUserid = [[MyInfo share] userid];
+    if(myUserid != message.userid)
+    {
+        bubbleImageName = @"MessageBubbleGray";
+    }
+    else
+    {
+        bubbleImageName = @"MessageBubbleBlue";
+    }
+    UIImage *messageBubbleImg = [[UIImage imageNamed:bubbleImageName] stretchableImageWithLeftCapWidth:23 topCapHeight:15];
+    _messageBgImage.image = messageBubbleImg;
 }
 
 

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "RoomListViewController.h"
+#import "MyInfo.h"
 
 @implementation AppDelegate
 
@@ -25,7 +26,9 @@
     
 //    LoginViewController *loginViewController = [[LoginViewController alloc]init];
     //    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-//    [self.window setRootViewController:loginViewController];    
+//    [self.window setRootViewController:loginViewController];
+    
+    [[MyInfo share] setUserid:1 username:@"changwoo"];
     
     RoomListViewController *roomListViewController = [[RoomListViewController alloc]init];
     UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:roomListViewController];

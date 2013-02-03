@@ -10,9 +10,11 @@
 
 @interface CommonUtil : NSObject
 + (id) share;
+- (void) bulidErrorView:(UIViewController*)viewController;
 - (int) heightWithText:(NSString*)text font:(UIFont*)font;
 - (NSArray*) messagesWithResponseStr:(NSString*)results;
 - (NSString*) buildStringJsonWithDictionaly:(NSDictionary*)dic;
 - (NSDictionary*) buildDictionaryJsonWithJsonString:(NSString*)jsonString;
+- (void) buildErrorView:(UIViewController*)viewController jsonString:(NSString*)jsonString;
 
 @end

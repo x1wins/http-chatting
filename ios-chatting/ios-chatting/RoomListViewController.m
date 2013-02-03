@@ -16,6 +16,8 @@
 #import "RoomDetailViewController.h"
 #import "Message.h"
 
+#import "MBProgressHUD.h"
+
 @interface RoomListViewController ()
 
 @end
@@ -51,6 +53,7 @@
 #pragma mark - my Function
 - (void) reloadDatas
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     NSString *strUrl = [NSString stringWithFormat:SERVER_URL_HTTP,@"chat/room/find"];
     
@@ -67,14 +70,16 @@
         NSLog(@"Request Successful, response '%@'", responseStr);
         
         NSDictionary *dataDic = [[CommonUtil share] buildDictionaryJsonWithJsonString:responseStr];
-//        NSArray *results = [NSMutableArray arrayWithArray:[[dataDic objectForKey:@"res"] objectForKey:@"result"]];
-//        _datas = [NSMutableArray arrayWithArray:[[CommonUtil share] messagesWithResults:results]];
+        [_datas removeAllObjects];
         _datas = [NSMutableArray arrayWithArray:[[dataDic objectForKey:@"res"] objectForKey:@"result"]];
-        
+    
         [_mainTableView reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"failure");
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [[CommonUtil share] bulidErrorView:self];
     }];
 
 }
