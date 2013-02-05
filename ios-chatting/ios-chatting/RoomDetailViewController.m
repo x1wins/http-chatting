@@ -94,7 +94,7 @@
     //content=hihi&userid=34&roomid=1
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             [NSString stringWithFormat:@"%lld",message.roomid], @"roomid",
-                            [NSString stringWithFormat:@"%lld",message.userid], @"userid",
+                            [NSString stringWithFormat:@"%@",message.user.userid], @"userid",
                             message.content, @"content", nil];
     
     NSMutableURLRequest *request = [httpClient requestWithMethod:@"POST" path:url parameters:params];
@@ -210,16 +210,16 @@
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *) indexPath{
     
     Message *message = [_datas objectAtIndex:indexPath.row];
-    NSLog(@"message.cellHeight %d",message.cellHeight);
     int height = message.cellHeight;
     return height;
 }
 
 - (BOOL) isMyMessage:(Message*)message
 {
-    SInt64 myUserid = [[MyInfo share] userid];
+    NSString *myUserid = [[MyInfo share] userid];
+    NSString *userid = [NSString stringWithFormat:@"%@",message.user.userid];
     
-    return myUserid == message.userid;
+    return [userid isEqualToString:myUserid];
 }
 
 
@@ -266,9 +266,10 @@
     if([content length] == 0) return;
     _textView.text = @"";
     
-    SInt64 userid = [[MyInfo share]userid];
+    NSString *userid = [[MyInfo share]userid];
     NSString *username = [[MyInfo share]username];
-    Message *message = [Message setRoomid:_roomId messageid:nil userid:userid username:username imgUrl:nil content:content date:nil];
+    User *user = [User setUserid:userid username:username userPhotoUrl:nil];
+    Message *message = [Message setRoomid:_roomId messageid:nil user:user imgUrl:nil content:content date:nil];
     //post
     [self sendMessage:message];
 }

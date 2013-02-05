@@ -28,7 +28,7 @@
     return singleton;
 }
 
-- (void) setUserid:(SInt64)userid username:(NSString*)username
+- (void) setUserid:(NSString*)userid username:(NSString*)username
 {
     _userid = userid;
     _username = username;

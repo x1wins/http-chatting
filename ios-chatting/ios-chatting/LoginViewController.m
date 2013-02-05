@@ -343,7 +343,7 @@
             
             [self.view removeFromSuperview];
             
-            [[MyInfo share] setUserid:1 username:@"changwoo"];
+            [[MyInfo share] setUserid:@"1" username:@"changwoo"];
             
             [self.delegate loginSuccess:self];
             

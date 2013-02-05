@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface CommonUtil : NSObject
+
+@property (strong, nonatomic) NSMutableDictionary *storageImage;
+
 + (id) share;
+- (void) loadAsyncImageFromURL:(NSURL *)url  imageBlock:(void (^) (UIImage *image))imageBlock errorBlock:(void(^)(void))errorBlock;
 - (void) bulidErrorView:(UIViewController*)viewController;
 - (void) bulidCloseButton:(UIViewController*)viewController sel:(SEL)method;
 - (void) bulidNavigationRightRefreshButton:(UIViewController*)viewController sel:(SEL)method;

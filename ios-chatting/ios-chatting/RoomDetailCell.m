@@ -8,6 +8,7 @@
 
 #import "RoomDetailCell.h"
 #import "MyInfo.h"
+#import "CommonUtil.h"
 
 @implementation RoomDetailCell
 
@@ -35,7 +36,7 @@
 - (void)setFrameWithMessage:(Message *)message
 {
     _message.text = message.content;
-    _userName.text = [NSString stringWithFormat:@"%lld", message.userid];
+    _userName.text = [NSString stringWithFormat:@"%@", message.user.userid];
     
     _message.frame = CGRectMake(_message.frame.origin.x, _message.frame.origin.y, _message.frame.size.width, message.textHeight);
     [_message setNumberOfLines:0];
@@ -45,8 +46,9 @@
     
     
     NSString *bubbleImageName;
-    SInt64 myUserid = [[MyInfo share] userid];
-    if(myUserid != message.userid)
+    NSString *myUserid = [[MyInfo share] userid];
+    NSString *userid = [NSString stringWithFormat:@"%@", message.user.userid];
+    if(![myUserid isEqualToString:userid])
     {
         bubbleImageName = @"MessageBubbleGray";
     }
@@ -56,6 +58,27 @@
     }
     UIImage *messageBubbleImg = [[UIImage imageNamed:bubbleImageName] stretchableImageWithLeftCapWidth:23 topCapHeight:15];
     _messageBgImage.image = messageBubbleImg;
+    
+    NSURL *userImageUrl = [NSURL URLWithString:message.user.userPhotoUrl];
+
+    UIImage *userImage = [[[CommonUtil share] storageImage] objectForKey:message.user.userPhotoUrl];
+    
+    if(userImage == nil)
+    {
+        [[CommonUtil share] loadAsyncImageFromURL:userImageUrl imageBlock:^(UIImage *image){
+            
+            _userImage.image = image;
+            [[[CommonUtil share] storageImage] setObject:image forKey:message.user.userPhotoUrl];
+            
+        }errorBlock:^{
+            
+        }];
+    }
+    else
+    {
+        _userImage.image = userImage;
+    }
+    
 }
 
 

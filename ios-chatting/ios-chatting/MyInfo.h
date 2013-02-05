@@ -10,10 +10,10 @@
 
 @interface MyInfo : NSObject
 
-@property (assign, nonatomic) SInt64 userid;
+@property (strong, nonatomic) NSString *userid;
 @property (strong, nonatomic) NSString *username;
 
 + (id) share;
-- (void) setUserid:(SInt64)userid username:(NSString*)username;
+- (void) setUserid:(NSString*)userid username:(NSString*)username;
 
 @end

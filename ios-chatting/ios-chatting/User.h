@@ -12,5 +12,8 @@
 
 @property (strong, nonatomic) NSString *userid;
 @property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *userPhotoUrl;
+
++ (id) setUserid:(NSString*)userid username:(NSString*)username userPhotoUrl:(NSString*)userPhotoUrl;
 
 @end

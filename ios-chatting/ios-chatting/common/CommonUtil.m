@@ -12,6 +12,8 @@
 
 @implementation CommonUtil
 
+@synthesize storageImage = _storageImage;
+
 + (id) share {
     static CommonUtil *singleton = nil;
     
@@ -19,11 +21,35 @@
         @synchronized(self) {
             if(singleton == nil) {
                 singleton = [[self alloc] init];
+                singleton.storageImage = [NSMutableDictionary dictionary];
             }
         }
     }
     
     return singleton;
+}
+
+/**
+ =====================================================================
+ 이미지 비동기 로딩
+ http://blog.saltfactory.net/97
+ =====================================================================
+ **/
+- (void) loadAsyncImageFromURL:(NSURL *)url  imageBlock:(void (^) (UIImage *image))imageBlock errorBlock:(void(^)(void))errorBlock
+{
+    dispatch_async( dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0 ), ^(void)
+                   {
+                       NSData * data = [[NSData alloc] initWithContentsOfURL:url];
+                       UIImage * image = [[UIImage alloc] initWithData:data];
+                       dispatch_async( dispatch_get_main_queue(), ^(void){
+                           if( image != nil )
+                           {
+                               imageBlock( image );
+                           } else {
+                               errorBlock();
+                           }
+                       });
+                   });
 }
 
 - (void) bulidErrorView:(UIViewController*)viewController
@@ -75,12 +101,15 @@
         NSDictionary *dic = [results objectAtIndex:i];
         SInt64 roomid = [dic objectForKey:@"roomid"];
         SInt64 messageid = [dic objectForKey:@"id"];
-        SInt64 userid    = [[dic objectForKey:@"userid"] longLongValue];
-        NSString *username  = nil;//[dic objectForKey:@"userid"];
+        NSString *userid    = [dic objectForKey:@"userid"];
+        NSString *username    = [dic objectForKey:@"username"];
+        NSString *userPhotoUrl    = [dic objectForKey:@"userPhotoUrl"];
+        User *user = [User setUserid:userid username:username userPhotoUrl:userPhotoUrl];
+//        NSString *username  = nil;//[dic objectForKey:@"userid"];
         NSString *imgUrl    = nil;
         NSString *content   = [dic objectForKey:@"content"];
         NSString *date      = nil;
-        [datas addObject:[Message setRoomid:roomid messageid:messageid userid:userid username:username imgUrl:imgUrl content:content date:date]];
+        [datas addObject:[Message setRoomid:roomid messageid:messageid user:user  imgUrl:imgUrl content:content date:date]];
     }
     return datas;
 }

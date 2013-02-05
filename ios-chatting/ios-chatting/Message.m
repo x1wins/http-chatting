@@ -15,20 +15,18 @@
 
 @synthesize roomid = _roomid;
 @synthesize messageid = _messageid;
-@synthesize userid = _userid;
-@synthesize username = _username;
+@synthesize user = _user;
 @synthesize imgUrl = _imgUrl;
 @synthesize content = _content;
 @synthesize date = _date;
 @synthesize cellHeight = _cellHeight;
 
-+ (id) setRoomid:(SInt64)roomid messageid:(SInt64)messageid userid:(SInt64)userid username:(NSString *)username imgUrl:(NSString *)imgUrl content:(NSString *)content date:(NSString *)date
++ (id) setRoomid:(SInt64)roomid messageid:(SInt64)messageid user:(User*)user imgUrl:(NSString *)imgUrl content:(NSString *)content date:(NSString *)date
 {
     Message *message = [[Message alloc]init];
     message.roomid = roomid;
     message.messageid = messageid;
-    message.userid = userid;
-    message.username = username;
+    message.user = user;
     message.imgUrl = imgUrl;
     message.content = content;
     message.date = date;
