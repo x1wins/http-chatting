@@ -14,7 +14,7 @@
 
 + (id) share;
 - (void) loadAsyncImageFromURL:(NSURL *)url  imageBlock:(void (^) (UIImage *image))imageBlock errorBlock:(void(^)(void))errorBlock;
-- (void) bulidErrorView:(UIViewController*)viewController;
+- (void) buildErrorView:(UIViewController*)viewController;
 - (void) bulidCloseButton:(UIViewController*)viewController sel:(SEL)method;
 - (void) bulidNavigationRightRefreshButton:(UIViewController*)viewController sel:(SEL)method;
 - (int) heightWithText:(NSString*)text font:(UIFont*)font;

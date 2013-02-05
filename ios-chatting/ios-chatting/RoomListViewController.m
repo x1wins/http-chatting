@@ -86,7 +86,7 @@
         NSLog(@"failure");
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [[CommonUtil share] bulidErrorView:self];
+        [[CommonUtil share] buildErrorView:self];
     }];
 
 }

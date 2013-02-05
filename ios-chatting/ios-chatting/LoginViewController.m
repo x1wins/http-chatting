@@ -106,9 +106,21 @@
 - (void) showSignupModalView
 {
     SignupViewController *signupViewController = [[SignupViewController alloc]init];
-    [self presentViewController:signupViewController animated:YES completion:^{
+    signupViewController.delegate = self;
+    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:signupViewController];
+    [self presentViewController:navigationController animated:YES completion:^{
         
     }];
+}
+
+#pragma mark - signUpViewDelegate
+-(void) signUpSuccess:(SignupViewController*)signupViewController
+{
+    
+    _idTextField.text = signupViewController.idTextField.text;
+    _pwTextField.text = signupViewController.pwTextField.text;
+    [self switchAction];
+    
 }
 
 #pragma mark - event
@@ -343,7 +355,9 @@
             
             [self.view removeFromSuperview];
             
-            [[MyInfo share] setUserid:@"1" username:@"changwoo"];
+            NSString *userid = [[dic objectForKey:@"signin"] objectForKey:@"userid"];
+            NSString *username = [[dic objectForKey:@"signin"] objectForKey:@"username"];
+            [[MyInfo share] setUserid:userid username:username];
             
             [self.delegate loginSuccess:self];
             

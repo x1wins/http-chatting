@@ -7,6 +7,10 @@
 //
 
 #import "SignupViewController.h"
+#import "common/CommonConst.h"
+#import "CommonUtil.h"
+#import "AFHTTPClient.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface SignupViewController ()
 
@@ -51,12 +55,90 @@
     _confirmPwTextField.placeholder = @"Required";
     
     [_idTextField becomeFirstResponder];
+    
+    [[CommonUtil share] bulidCloseButton:self sel:@selector(closeModal)];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - event
+- (void)closeModal
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+- (void)requestSignUp
+{
+    //http://localhost:8080/FlowerPaper/user/signup.json
+    
+    
+//    http://localhost:8080/FlowerPaper/user/signup.json?userid=dd&pasword=1&name=d
+    
+    NSString *userid = _idTextField.text;
+    NSString *username = _nameTextField.text;
+    NSString *password = _pwTextField.text;
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            userid, @"userid",
+                            password, @"password",
+                            username, @"name",
+                            nil];
+    
+    NSString *strUrl = [NSString stringWithFormat:SERVER_URL_HTTP,@"user/signup.json"];
+    NSURL *url = [NSURL URLWithString:strUrl];
+    AFHTTPClient *client = [[AFHTTPClient alloc]initWithBaseURL:url];
+    
+    //depending on what kind of response you expect.. change it if you expect XML
+    [client registerHTTPOperationClass:[AFHTTPRequestOperation class]];
+    
+    [client postPath:strUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"success");
+        NSLog(@"Request Successful, response '%@'", responseStr);
+        
+        
+        NSDictionary *dic = [[CommonUtil share] buildDictionaryJsonWithJsonString:responseStr];
+        NSString *status = [[dic objectForKey:@"response"] objectForKey:@"status"];
+//        NSString *sessionId = [[dic objectForKey:@"response"] objectForKey:@"result"];
+        
+        NSString *message = @"";
+        if([status isEqualToString:[NSString stringWithFormat:@"%@", SUCCESS]])
+        {
+            message = @"Sigin Up Success!";
+            [self.delegate signUpSuccess:self];
+        }
+        else
+        {
+            message = @"Sign Up FAIL";
+        }
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                            message:message
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            [self closeModal];
+        });
+        
+        
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"failure");
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+    }];
+
+    
 }
 
 #pragma mark - table delegate
@@ -155,6 +237,8 @@
         case 1:
             switch (indexPath.row) {
                 case 0:
+                    //request sigin up
+                    [self requestSignUp];
                     break;
                 case 1:
                     [self dismissViewControllerAnimated:YES completion:nil];

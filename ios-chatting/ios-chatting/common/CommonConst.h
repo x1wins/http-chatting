@@ -12,4 +12,6 @@
 #define COOKIE_DOMAIN @"www.changwoo.net"
 #define SERVER_URL_HTTP @"http://localhost:8080/FlowerPaper/%@"
 
+#define SUCCESS @"SUCCESS"
+
 #endif

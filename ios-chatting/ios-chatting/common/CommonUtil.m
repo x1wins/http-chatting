@@ -52,7 +52,7 @@
                    });
 }
 
-- (void) bulidErrorView:(UIViewController*)viewController
+- (void) buildErrorView:(UIViewController*)viewController
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:viewController.navigationController.view animated:YES];
 	
@@ -160,7 +160,7 @@
     
     if(![status isEqualToString:@"SUCCESS"])
     {
-        [[CommonUtil share] bulidErrorView:viewController];
+        [[CommonUtil share] buildErrorView:viewController];
     }
 }
 

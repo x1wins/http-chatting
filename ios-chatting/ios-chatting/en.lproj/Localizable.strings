@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  ios-chatting
+
+  Created by Rhee Chang-Woo on 13. 2. 6..
+  Copyright (c) 2013년 Chang woo Rhee. All rights reserved.
+*/
+
+
+//LoginViewController
+"welcome" = "";
+"userid" = "";
+"password" = "";
+"save" = "";
+"sign_in" = "";
+"sign_up" = "";
+"required" = "";
+"warning_userid" = "";
+"warning_password" = "";
+
+
+//SignUpViewController
+"username" = "";
+"done" = "";
+"cancel" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";

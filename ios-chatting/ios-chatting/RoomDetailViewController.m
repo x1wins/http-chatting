@@ -91,7 +91,7 @@
     
     
     
-    //content=hihi&userid=34&roomid=1
+    //http://localhost:8080/FlowerPaper/chat/message/save&content=hihi&userid=34&roomid=1
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                             [NSString stringWithFormat:@"%lld",message.roomid], @"roomid",
                             [NSString stringWithFormat:@"%@",message.user.userid], @"userid",
@@ -106,6 +106,7 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
 
         NSString *responseStr = [operation responseString];
+        NSLog(@"%@",responseStr);
         [[CommonUtil share] buildErrorView:self jsonString:responseStr];
         [self reloadDatas];
         
@@ -113,7 +114,7 @@
         
         NSLog(@"error: %@", [operation error]);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [[CommonUtil share] bulidErrorView:self];
+        [[CommonUtil share] buildErrorView:self];
         [_textView resignFirstResponder];
         
     }];
@@ -140,8 +141,8 @@
         
         NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         
-        NSLog(@"success");
-        NSLog(@"Request Successful, response '%@'", responseStr);
+//        NSLog(@"success");
+//        NSLog(@"Request Successful, response '%@'", responseStr);
         
         _datas = [NSMutableArray arrayWithArray:[[CommonUtil share] messagesWithResponseStr:responseStr]];
         [_mainTableView reloadData];
@@ -153,7 +154,7 @@
         NSLog(@"failure");
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [[CommonUtil share] bulidErrorView:self];
+        [[CommonUtil share] buildErrorView:self];
         
     }];
     
@@ -197,7 +198,7 @@
         }
     }
     
-    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [cell setFrameWithMessage:message];
 
     // Configure the cell...
@@ -240,12 +241,6 @@
         _keypad.frame = _initKeypadRect;
         return;
     }
-    
-    //    int keypadY = _initKeypadRect.y;
-    //    int keypadHeight = _textView.frame.origin.y - _initKeypadRect.y;
-    //    int width = 320;
-    //
-    //    _keypad.frame = CGRectMake(0, toolbarY, width, keypadHeight);
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text

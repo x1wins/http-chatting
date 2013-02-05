@@ -11,7 +11,7 @@
 
 @protocol LoginViewDelegate;
 
-@interface LoginViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface LoginViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SignupViewDelegate>
 {
     
 }
