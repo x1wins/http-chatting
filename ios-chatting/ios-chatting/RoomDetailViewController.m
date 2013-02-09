@@ -43,6 +43,10 @@
     // Do any additional setup after loading the view from its nib.
     
     [self reloadDatas];
+    [_textView setScrollEnabled:NO];
+    
+    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,6 +79,11 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillHideNotification
                                                   object:nil];
+}
+
+- (void) onTimer:(NSTimer *)timer
+{
+    [self reloadDatas];
 }
 
 #pragma mark - request to server
@@ -126,7 +135,7 @@
 
 - (void) reloadDatas
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     NSString *path = [NSString stringWithFormat:@"chat/message/find/%lld",_roomId];
     NSString *strUrl = [NSString stringWithFormat:SERVER_URL_HTTP,path];
@@ -147,13 +156,13 @@
         _datas = [NSMutableArray arrayWithArray:[[CommonUtil share] messagesWithResponseStr:responseStr]];
         [_mainTableView reloadData];
         [self scrollsToBottomAnimated:YES];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"failure");
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [[CommonUtil share] buildErrorView:self];
         
     }];

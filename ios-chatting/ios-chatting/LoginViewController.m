@@ -361,7 +361,6 @@
             
             [self.delegate loginSuccess:self];
             
-            
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

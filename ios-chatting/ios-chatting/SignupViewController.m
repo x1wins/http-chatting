@@ -148,7 +148,7 @@
     
     switch (section) {
         case 0:
-            cell_count = 4;
+            cell_count = 3;
             break;
         case 1:
         default:
@@ -194,12 +194,9 @@
                     [cell addSubview:_nameTextField];
                     break;
                 case 2:
+                default:
                     cell.textLabel.text = @"비밀번호";
                     [cell addSubview:_pwTextField];
-                    break;
-                case 3:
-                    cell.textLabel.text = @"비밀번호";
-                    [cell addSubview:_confirmPwTextField];
                     break;
             }
             break;
@@ -234,6 +231,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     switch(indexPath.section){
+        case 0:
+        default:
+            break;
         case 1:
             switch (indexPath.row) {
                 case 0:
@@ -249,6 +249,5 @@
     
     
 }
-
 
 @end

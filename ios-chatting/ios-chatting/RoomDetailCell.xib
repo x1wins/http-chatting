@@ -42,8 +42,8 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUIImageView" id="703383749">
 								<reference key="NSNextResponder" ref="467833991"/>
-								<int key="NSvFlags">288</int>
-								<string key="NSFrame">{{9, 6}, {48, 57}}</string>
+								<int key="NSvFlags">264</int>
+								<string key="NSFrame">{{9, 31}, {48, 57}}</string>
 								<reference key="NSSuperview" ref="467833991"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1032126257"/>
@@ -154,8 +154,8 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUIImageView" id="630865185">
 								<reference key="NSNextResponder" ref="383112926"/>
-								<int key="NSvFlags">288</int>
-								<string key="NSFrame">{{263, 6}, {48, 57}}</string>
+								<int key="NSvFlags">264</int>
+								<string key="NSFrame">{{263, 29}, {48, 57}}</string>
 								<reference key="NSSuperview" ref="383112926"/>
 								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
