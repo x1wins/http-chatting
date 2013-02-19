@@ -44,8 +44,6 @@
     
     [self reloadDatas];
     [_textView setScrollEnabled:NO];
-    
-    [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
 
 }
 
@@ -81,11 +79,6 @@
                                                   object:nil];
 }
 
-- (void) onTimer:(NSTimer *)timer
-{
-    [self reloadDatas];
-}
-
 #pragma mark - request to server
 - (void) sendMessage:(Message*)message
 {
@@ -117,7 +110,6 @@
         NSString *responseStr = [operation responseString];
         NSLog(@"%@",responseStr);
         [[CommonUtil share] buildErrorView:self jsonString:responseStr];
-        [self reloadDatas];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -132,6 +124,41 @@
     [operation start];
 }
 
+
+//long Polling
+- (void) recevieDatas
+{
+    NSString *path = [NSString stringWithFormat:@"chat/recevice"];
+    NSString *strUrl = [NSString stringWithFormat:SERVER_URL_HTTP,path];
+    
+    NSURL *url = [NSURL URLWithString:strUrl];
+    AFHTTPClient *client = [[AFHTTPClient alloc]initWithBaseURL:url];
+    
+    //depending on what kind of response you expect.. change it if you expect XML
+    [client registerHTTPOperationClass:[AFHTTPRequestOperation class]];
+    
+    [client getPath:strUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        //        NSLog(@"success");
+        //        NSLog(@"Request Successful, response '%@'", responseStr);
+        
+        Message *message = [[CommonUtil share] messageWithResponseStr:responseStr];
+        [_datas addObject:message];
+        [_mainTableView reloadData];
+        [self scrollsToBottomAnimated:YES];
+        
+        [self recevieDatas];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"failure");
+        NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
+        [[CommonUtil share] buildErrorView:self];
+        
+    }];
+}
 
 - (void) reloadDatas
 {
@@ -156,7 +183,8 @@
         _datas = [NSMutableArray arrayWithArray:[[CommonUtil share] messagesWithResponseStr:responseStr]];
         [_mainTableView reloadData];
         [self scrollsToBottomAnimated:YES];
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        [self recevieDatas];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

@@ -7,7 +7,6 @@
 //
 
 #import "CommonUtil.h"
-#import "Message.h"
 #import "MBProgressHUD.h"
 
 @implementation CommonUtil
@@ -112,6 +111,25 @@
         [datas addObject:[Message setRoomid:roomid messageid:messageid user:user  imgUrl:imgUrl content:content date:date]];
     }
     return datas;
+}
+
+- (Message*) messageWithResponseStr:(NSString*)responseStr
+{
+    NSDictionary *dataDic = [[CommonUtil share] buildDictionaryJsonWithJsonString:responseStr];
+    
+    NSDictionary *dic = [dataDic objectForKey:@"result"];
+    SInt64 roomid = [dic objectForKey:@"roomid"];
+    SInt64 messageid = [dic objectForKey:@"id"];
+    NSString *userid    = [dic objectForKey:@"userid"];
+    NSString *username    = [dic objectForKey:@"username"];
+    NSString *userPhotoUrl    = [dic objectForKey:@"userPhotoUrl"];
+    User *user = [User setUserid:userid username:username userPhotoUrl:userPhotoUrl];
+    //        NSString *username  = nil;//[dic objectForKey:@"userid"];
+    NSString *imgUrl    = nil;
+    NSString *content   = [dic objectForKey:@"content"];
+    NSString *date      = nil;
+
+    return [Message setRoomid:roomid messageid:messageid user:user  imgUrl:imgUrl content:content date:date];
 }
 
 /**

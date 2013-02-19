@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ios-chatting/RoomDetailViewController.m"
-         timestampString = "382116881.008451"
+         timestampString = "382995198.289332"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "117"
-         endingLineNumber = "117"
+         startingLineNumber = "110"
+         endingLineNumber = "110"
          landmarkName = "-sendMessage:"
          landmarkType = "5">
       </FileBreakpoint>

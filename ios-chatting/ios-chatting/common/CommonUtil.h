@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Message.h"
 
 @interface CommonUtil : NSObject
 
@@ -18,7 +19,8 @@
 - (void) bulidCloseButton:(UIViewController*)viewController sel:(SEL)method;
 - (void) bulidNavigationRightRefreshButton:(UIViewController*)viewController sel:(SEL)method;
 - (int) heightWithText:(NSString*)text font:(UIFont*)font;
-- (NSArray*) messagesWithResponseStr:(NSString*)results;
+- (NSArray*) messagesWithResponseStr:(NSString*)responseStr;
+- (Message*) messageWithResponseStr:(NSString*)responseStr;
 - (NSString*) buildStringJsonWithDictionaly:(NSDictionary*)dic;
 - (NSDictionary*) buildDictionaryJsonWithJsonString:(NSString*)jsonString;
 - (void) buildErrorView:(UIViewController*)viewController jsonString:(NSString*)jsonString;
