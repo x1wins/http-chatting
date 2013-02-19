@@ -155,14 +155,13 @@
         
         NSLog(@"failure");
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
-        [[CommonUtil share] buildErrorView:self];
         
     }];
 }
 
 - (void) reloadDatas
 {
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     NSString *path = [NSString stringWithFormat:@"chat/message/find/%lld",_roomId];
     NSString *strUrl = [NSString stringWithFormat:SERVER_URL_HTTP,path];
@@ -186,11 +185,15 @@
         
         [self recevieDatas];
         
+        [hud hide:YES];
+        
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSLog(@"failure");
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+        [hud hide:YES];
         [[CommonUtil share] buildErrorView:self];
         
     }];
