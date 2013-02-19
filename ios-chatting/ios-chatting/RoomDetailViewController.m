@@ -128,7 +128,7 @@
 //long Polling
 - (void) recevieDatas
 {
-    NSString *path = [NSString stringWithFormat:@"chat/recevice"];
+    NSString *path = [NSString stringWithFormat:@"chat/recevice/%lld",_roomId];
     NSString *strUrl = [NSString stringWithFormat:SERVER_URL_HTTP,path];
     
     NSURL *url = [NSURL URLWithString:strUrl];
@@ -156,6 +156,11 @@
         NSLog(@"failure");
         NSLog(@"[HTTPClient Error]: %@", error.localizedDescription);
         
+        double delayInSeconds = 5.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self recevieDatas];
+        });
     }];
 }
 
