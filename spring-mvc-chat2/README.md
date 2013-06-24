@@ -12,7 +12,7 @@ There is a bug in Tomcat that affects this sample. Please, use Tomcat 7.0.32 or 
 
 Eclipse users run `mvn eclipse:eclipse` and then import the project. Or just import the code as a Maven project into IntelliJ, NetBeans, or Eclipse.
 
-### I have done Custom for ChatController
+### I have been Custom for ChatController
 
 http://changwoo.net/bbs/bbsDetail.do?&num=626&bbs_name=spring&searchType=all&search=&nowPage=1
 
