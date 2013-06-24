@@ -9,7 +9,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/cw_chat" />
+		<property name="url" value="jdbc:mysql://localhost:3306/ggaggao" />
 		<property name="username" value="root" />
 		<property name="password" value="1234" />
 	</bean>

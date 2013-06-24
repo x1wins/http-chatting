@@ -37,6 +37,39 @@ public class ChatController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	
+	
+//	@RequestMapping(value = "/processSendTalk", method = RequestMethod.POST)
+//	public String processSendTalk(Long roomId, Long memberId,
+//                                      String message) throws Exception {
+//
+//
+//        HashMap<String,Object> notificationMap = new HashMap<String, Object>();
+//        notificationMap.put("participants",talk.getTalkRoom().getParticipants());
+//        notificationMap.put("talk",talk);
+//        notificationMap.put("currentUser", getCurrentUser().getId());
+//        notificationMap.put(NotificationType.THIS, NotificationType.TALK.SEND);
+//
+//        this.atmosphereBroadcaster.sendNotification(notificationMap);
+//
+//        JsonResponse res = new JsonResponse();
+//		try{
+//			int check = chatService.saveMessage(message);
+//			if(!result.hasErrors() && check!=0){
+//				res.setStatus(Common.SUCCESS);
+//				res.setResult(message);
+//			}else{
+//				res.setStatus(Common.FAIL);
+//				res.setResult(result.getAllErrors());
+//			}
+//		}catch(Exception e){
+//			logger.debug(e.getMessage());
+//			res.setStatus(Common.FAIL);
+//			res.setResult(e.getMessage());
+//		}
+//		model.addAttribute("res",res);
+//		return "jsonView";
+//	}
+	
 	/*
 	 * test url
 	 * http://localhost:8080/ggaggao/chat/message/save?content=hihi&userid=34&roomid=4

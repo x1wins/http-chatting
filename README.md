@@ -7,6 +7,11 @@ This project is not done developed yet
 
 this is demo screen shot
 
+warning
+------------
+Command /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang failed with exit code 1
+http://stackoverflow.com/questions/9457510/apple-llvm-compiler-3-1-error-clang
+
 feature
 ------------
 based http and socket
